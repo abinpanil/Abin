@@ -76,22 +76,6 @@
 					</li>
 					<li class="nav-item mr-lg-4">
 						<a href="#projects" class="nav-link scroll">Projects</a>
-						<!-- <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle ">
-							Pages
-							<b class="caret"></b>
-						</a>
-						<ul class="dropdown-menu" role="menu">
-							<li class="nav-item">
-								<a href="#blog" class="nav-link scroll">Blog</a>
-							</li>
-							<li class="nav-item">
-								<a href="#projects" class="nav-link scroll">Projects</a>
-							</li>
-							<div class="dropdown-divider"></div>
-							<li class="nav-item">
-								<a href="#testimonials" class="nav-link scroll">Testimonials</a>
-							</li>
-						</ul> -->
 					</li>
 					<li class="nav-item">
 						<a class="nav-link scroll" href="#contact">Contact</a>
@@ -347,7 +331,7 @@
 			</div>
 			<div class="col-lg-7 mt-lg-0 mt-5 contact-right">
 				<h4 class="mb-4">Get In Touch</h4>
-				<form id="submit-form" action="" >
+				<form id="submit-form" method="POST" action="https://script.google.com/macros/s/AKfycbwac-YYfcX7Sq8NRGKNFzo1JT7xOtW2IGM6zsvjnsnrp9_9ulAagHWf3Ps9vuQ27CubZA/exec" >
 					<div class="form-control">
 						<label>Name</label>
 						<input id="form_fname" type="text" placeholder="Name">
@@ -356,14 +340,14 @@
 					<div class="clearfix"></div>
 					<div class="form-control">
 						<label>Email</label>
-						<input id="form_email" type="email" placeholder="example@gmail.com" >
+						<input id="form_email" type="text" placeholder="example@gmail.com" >
 						<span class="error_form" id="email_error_message"></span>
 						
 					</div>
 					<div class="clearfix"></div>
 					<label>Message</label>
 					<textarea name="Message" onfocus="this.value = '';" >Message...</textarea>
-					<input id="submit" type="submit" value="Submit">
+					<input onclick="setTimeout(function() { window.location.reload(); }, 1000)" id="submit" type="submit" value="Submit">
 				</form>
 			</div>
 		</div>
@@ -458,7 +442,7 @@
 	<!-- //here ends scrolling icon -->
 	<!-- start-smoth-scrolling -->
 	<!-- ajax -->
-	<script>
+	<!-- <script>
         $("#submit-form").submit((e)=>{
             e.preventDefault()
             $.ajax({
@@ -476,13 +460,9 @@
                 }
             })
         })
-    </script>
+    </script> -->
 	<!-- ajax -->
 <script>
-
-
-
-
 
 $(function() {
 
@@ -490,7 +470,8 @@ $("#fname_error_message").hide();
 $("#email_error_message").hide();
 var error_fname = false;
 var error_email = false;
-console.log("hello")
+
+let flag = 0;
 
 $("#form_fname").focusout(function(){
    check_fname();
@@ -536,13 +517,15 @@ $("#submit-form").submit(function() {
    check_email();
    
    if (error_fname === false && error_email === false) {
-	  alert("Registration Successfull");
+	
 	  return true;
+
    } else {
 	  alert("Please Fill the form Correctly");
 	  return false;
+	  flag++
    }
-
+   
 
 });
 });
