@@ -1023,6 +1023,9 @@ footer {
 		padding: 8em 2em 0em;
 	}
 }
+body::-webkit-scrollbar{
+    display: none;
+}
 @media(max-width:384px) {
 	.agile_banner_info h2 {
 		font-size: 27px;

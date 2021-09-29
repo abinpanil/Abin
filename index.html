@@ -46,11 +46,6 @@
 <div class="container">
 <!-- nav -->
 		<nav class="navbar navbar-expand-lg navbar-light">
-			<!-- logo -->
-			<!-- <h1>
-				</a>
-			</h1> -->
-			<!-- //logo -->
 			<button class="navbar-toggler ml-md-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
 				aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -343,7 +338,7 @@
 					<div class="clearfix"></div>
 					<label>Message</label>
 					<textarea name="Message" onfocus="this.value = '';" >Message...</textarea>
-					<input onclick="setTimeout(function() { window.location.reload(); }, 1000)" id="submit" type="submit" value="Submit">
+					<input id="submit" onclick="setTimeout(function() { window.location.reload(); }, 1000)" type="submit" value="Submit">
 				</form>
 			</div>
 		</div>
@@ -403,7 +398,6 @@
 	<!-- //for-Testimonials -->
 
 	<!-- Form validation -->
-	<!-- <script src="js/contact.js"></script> -->
 	<!-- Form validation -->
 
 	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
@@ -449,10 +443,10 @@ var error_email = false;
 
 let flag = 0;
 
-$("#form_fname").focusout(function(){
+$("#form_fname").keyup(function(){
    check_fname();
 });
-$("#form_email").focusout(function() {
+$("#form_email").keyup(function() {
    check_email();
 });
 
@@ -493,7 +487,7 @@ $("#submit-form").submit(function() {
    check_email();
    
    if (error_fname === false && error_email === false) {
-	
+
 	  return true;
 
    } else {
