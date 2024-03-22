@@ -147,13 +147,14 @@ header {
 
 /*-- banner --*/
 .banner{
-	background:url(../images/b1.jpg) no-repeat 0px 0px;
-	background-size:cover;
+	/* background:url(../images/b1.jpg) no-repeat 0px 0px; */
+	/* background-size:cover;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
 	-o-background-size:cover;
 	-ms-background-size:cover;
-    min-height: 765px;
+    min-height: 765px; */
+    background-color: #222;
 	position: relative;
 }
 .banner-layer {
@@ -203,20 +204,22 @@ header {
 
 }
 .agile_banner_info a {
-    padding: 11px 35px;
+    padding: 0px 6px;
     background: none;
     color: #fff;
-    border: 2px solid #fff;
+    /* border: 2px solid #fff; */
     font-weight: 600;
     font-size: 15px;
     letter-spacing: 1px;
     display: inline-block;
     margin-top: 1.5em;
-    border-radius: 35px;
+    /* border-radius: 35px; */
+    width: 44px;
+    height: 10px;
 }
 .agile_banner_info a:hover {
-    background: #fff;
-    border: 2px solid #fff;
+    /* background: #fff; */
+    /* border: 2px solid #fff; */
     color: #333;
 }
 /*-- // banner --*/
